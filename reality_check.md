@@ -135,4 +135,4 @@ io.interactive()
 
 Screenshot of the script execution:
 
-![](2021-03-26-23-26-26.png)
+![](pictures/2021-03-26-23-26-26.png)

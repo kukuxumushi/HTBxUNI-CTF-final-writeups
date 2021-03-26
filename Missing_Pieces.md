@@ -18,4 +18,4 @@ print(ans)
 
 Screenshot with script execution:
 
-![](2021-03-26-22-39-54.png)
+![](pictures/2021-03-26-22-39-54.png)
