@@ -40,7 +40,7 @@ namespace ConsoleApp26
             bool SwapAxis = true;
             bool InverseAxis = false;
 
-            using (var reader = new StreamReader(@"C:\Users\kukuxumushi\Downloads\Downloads\hw_remote (1)\csv.csv\digital.csv"))
+            using (var reader = new StreamReader(@"C:\\Users\\kukuxumushi\\Downloads\\Downloads\\hw_remote (1)\\csv.csv\\digital.csv"))
             {
                 string keypad =
                     "123A" +
