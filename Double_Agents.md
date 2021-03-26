@@ -1,7 +1,7 @@
 # Double Agents
 In this task we’re given the server script “server.py”. It decrypts the data user provides using AES in CBC mode. If the decrypted data has correct padding and if it matches an existing filename that script can read, then script sends back the contents of the file back to the user. If the script fails to unpad data or if file doesn’t exist, script sends back the decrypted value in hex format. 
 The following part of the script implements logic described above:
-```
+```python
 def challenge(req):
     req.sendall(bytes('Welcome, agent! Request a document:\n', 'utf-8'))
 
@@ -41,14 +41,14 @@ D(c[0]) = D(c[1])
 
 Ciphertext blocks we sent are the same, so results of decryption function D on these blocks are the same as well. 
 We recover IV:
-```IV = D(c[0]) ^ p[0] = p[1] ^ c[0] ^ p[0] = p[1] ^ p[0]```
+`IV = D(c[0]) ^ p[0] = p[1] ^ c[0] ^ p[0] = p[1] ^ p[0]`
 
 Recovering IV we also recovered the key for the cipher.
 File (“double_agents.txt”) containing the flag was specified in the description of the task.
 Since we know the key and IV, we can encrypt the filename and get the contents of the file from the server.
 Full solution in python:
 
-```
+```python
 from pwn import *
 from Crypto.Cipher import AES
 import binascii
