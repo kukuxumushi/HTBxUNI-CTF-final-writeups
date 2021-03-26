@@ -16,18 +16,22 @@ void press_X() {
 And the sub_7EF function is responsible for processing the input of numbers.
 It is not clear from the function itself how it performs work, but looking at the functions it calls, you can understand that:
 
-1.	The function at the address 0x3BD5 (print_flag) decodes the flag by xoring it with some key, and then outputs it:
+The function at the address 0x3BD5 (print_flag) decodes the flag by xoring it with some key, and then outputs it:
+
 ![](pictures/2021-03-26-23-19-25.png)
 
-2.	The function at 0x3C7C (append_dec_key) appends a new value to the key:
+The function at 0x3C7C (append_dec_key) appends a new value to the key:
+
 ![](pictures/2021-03-26-23-19-34.png)
 
 By tracing the calls to the append_dec_key function, you can see that the values for the call are selected in 2 places:
 
-1.	Before calling the output of the flag:
+Before calling the output of the flag:
+
 ![](pictures/2021-03-26-23-19-47.png)
 
-2.	At the end of the function:
+At the end of the function:
+
 ![](pictures/2021-03-26-23-19-51.png)
 
 Looking at all this, we get the numbers:
