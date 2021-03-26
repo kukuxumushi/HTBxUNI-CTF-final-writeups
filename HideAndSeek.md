@@ -13,7 +13,7 @@ After executing commands such as below, we have fully remediated issue 3.
 
 In linpeas.sh output we can also see the /etc/passwd file, where we can see users with default shell: root, user and hodor. 
 
-![](2021-03-26-23-37-10.png)
+![](pictures/2021-03-26-23-37-10.png)
 
 Since we do not know who is hodor, we simply remove him: userdel -f hodor (we have an error “userdel: user hodor is currently used by process 1”, but user will be removed). 
 
@@ -21,7 +21,7 @@ Now issue 2 is fully remediated.
 
 Next, we went to /root/.ssh/authorized_keys and found some ssh keys. 
 
-![](2021-03-26-23-37-23.png)
+![](pictures/2021-03-26-23-37-23.png)
 
 After a few tries we found that the last key was a backdoor. 
 
